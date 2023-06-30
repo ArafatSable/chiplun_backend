@@ -32,12 +32,13 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
-
+const cors = require('cors');
+app.use(cors());
 
 
 require("dotenv").config();
 
-const port=process.env.BASEURL;
+const port=process.env.BASEURL || 5000;
 app.get('/', async (req, res) => {
     console.log("THis is home page")
     res.send("This is home page")
