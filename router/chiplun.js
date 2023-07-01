@@ -6,12 +6,12 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const authenticate = require('../middleware/authenticate')
 const router = express.Router();
-const cors = require('cors');
+
 
 require("../db/connect");
 
 // Enable CORS
-router.use(cors());
+
 
 // about us page
 
